@@ -38,3 +38,15 @@ $theme: (
 @function themed($key) {
   @return map-get($theme-map, $key);
 }
+
+/*body {
+  @include themify($theme) {
+    background-color: themed('bg');
+  }
+}*/
+
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
