@@ -1,5 +1,9 @@
 @import '../../style.scss';
 
+.dark {
+  background-color: #222;
+}
+
 .navbar {
   @include themify($theme) {
     z-index: 1000;

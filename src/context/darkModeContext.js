@@ -8,6 +8,13 @@ export const DarkModeContextProvider = ({ children }) => {
   )
 
   const toggle = () => {
+    if (!darkMode) {
+      document.body.className = ''
+      document.body.className += 'dark'
+    } else {
+      document.body.className = ''
+      document.body.className += 'light'
+    }
     setDarkMode(!darkMode)
   }
 
