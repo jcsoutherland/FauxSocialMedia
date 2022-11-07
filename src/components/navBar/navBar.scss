@@ -35,11 +35,32 @@
         border: 1px solid themed('border');
         border-radius: 5px;
         padding: 5px;
+
+        @include mobile {
+          position: relative;
+        }
         input {
           border: none;
           width: 500px;
           background-color: transparent;
           color: themed('textColor');
+
+          @include mobile {
+            display: none;
+
+            /*.search-active {
+            background-color: themed(bgSoft);
+            display: block;
+            position: absolute;
+            height: 30px;
+            top: 50px;
+            left: 0;
+            right: 0;
+            }*/
+          }
+          @include tablet {
+            width: 200px;
+          }
         }
         textarea:focus,
         input:focus {
@@ -51,6 +72,11 @@
       display: flex;
       align-items: center;
       gap: 20px;
+
+      @include mobile {
+        display: none;
+      }
+
       .user {
         display: flex;
         align-items: center;

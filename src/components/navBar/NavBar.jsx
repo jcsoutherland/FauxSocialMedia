@@ -33,7 +33,7 @@ const NavBar = () => {
         <GridViewOutlinedIcon style={{ cursor: 'pointer' }} />
         <div className='search'>
           <SearchOutlinedIcon style={{ cursor: 'pointer' }} />
-          <input type='text' placeholder='Search' />
+          <input type='text' placeholder='Search' className='search-active' />
         </div>
       </div>
       <div className='right'>

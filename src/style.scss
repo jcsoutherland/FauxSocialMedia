@@ -44,3 +44,9 @@ $theme: (
     @content;
   }
 }
+
+@mixin tablet {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
