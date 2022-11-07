@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
+import $ from 'jquery'
 
 export const DarkModeContext = createContext()
 
@@ -8,18 +9,19 @@ export const DarkModeContextProvider = ({ children }) => {
   )
 
   const toggle = () => {
-    if (!darkMode) {
-      document.body.className = ''
-      document.body.className += 'dark'
-    } else {
-      document.body.className = ''
-      document.body.className += 'light'
-    }
+    $(document.body).toggleClass('dark')
+    $(document.body).toggleClass('light')
+
     setDarkMode(!darkMode)
   }
 
   useEffect(() => {
     localStorage.setItem('darkMode', darkMode)
+    if (darkMode) {
+      $(document.body).addClass('dark')
+    } else {
+      $(document.body).addClass('light')
+    }
   }, [darkMode])
 
   return (
